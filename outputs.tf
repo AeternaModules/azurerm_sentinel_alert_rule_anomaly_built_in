@@ -1,3 +1,7 @@
+output "sentinel_alert_rule_anomaly_built_ins_id" {
+  description = "Map of id values across all sentinel_alert_rule_anomaly_built_ins, keyed the same as var.sentinel_alert_rule_anomaly_built_ins"
+  value       = { for k, v in azurerm_sentinel_alert_rule_anomaly_built_in.sentinel_alert_rule_anomaly_built_ins : k => v.id }
+}
 output "sentinel_alert_rule_anomaly_built_ins_anomaly_settings_version" {
   description = "Map of anomaly_settings_version values across all sentinel_alert_rule_anomaly_built_ins, keyed the same as var.sentinel_alert_rule_anomaly_built_ins"
   value       = { for k, v in azurerm_sentinel_alert_rule_anomaly_built_in.sentinel_alert_rule_anomaly_built_ins : k => v.anomaly_settings_version }
